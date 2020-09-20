@@ -1,4 +1,4 @@
-package w8p1;
+package realstate;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;

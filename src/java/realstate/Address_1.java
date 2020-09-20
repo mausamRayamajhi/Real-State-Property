@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package w8p1;
+package realstate;
 
 import javax.persistence.MappedSuperclass;
 
@@ -12,18 +12,18 @@ import javax.persistence.MappedSuperclass;
  * @author Mausam Rayamajhi
  */
 @MappedSuperclass
-public class Address {
+public class Address_1 {
     private int streetNumber;
     private String streetName;
     private String city;
     private int postCode;
     private String country;
 
-    public Address() {
+    public Address_1() {
     }
 
     
-    public Address(int streetNumber, String streetName, String city, int postCode, String country) {
+    public Address_1(int streetNumber, String streetName, String city, int postCode, String country) {
         this.streetNumber = streetNumber;
         this.streetName = streetName;
         this.city = city;

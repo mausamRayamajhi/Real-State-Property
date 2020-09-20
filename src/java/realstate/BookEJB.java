@@ -1,4 +1,4 @@
-package w8p1;
+package realstate;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

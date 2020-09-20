@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="W8P1" default="default" basedir=".">
-    <description>Builds, tests, and runs the project W8P1.</description>
+<project name="Real-State-Property" default="default" basedir=".">
+    <description>Builds, tests, and runs the project Real-State-Property.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 

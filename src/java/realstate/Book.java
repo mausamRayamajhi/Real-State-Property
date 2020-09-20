@@ -1,4 +1,4 @@
-package w8p1;
+package realstate;
 
 import java.io.Serializable;
 import javax.persistence.*;
