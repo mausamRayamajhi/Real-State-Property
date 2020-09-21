@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package realstate;
+package realstate.model;
 
+import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 /**
@@ -12,18 +13,28 @@ import javax.persistence.MappedSuperclass;
  * @author Mausam Rayamajhi
  */
 @MappedSuperclass
-public class Address_1 {
+public class Address {
+    
+    @Column(nullable = false)
     private int streetNumber;
+    
+    @Column(nullable = false)
     private String streetName;
+    
+    @Column(nullable = false)
     private String city;
+    
+    @Column(nullable = false)
     private int postCode;
+    
+    @Column(nullable = false)
     private String country;
 
-    public Address_1() {
+    public Address() {
     }
 
     
-    public Address_1(int streetNumber, String streetName, String city, int postCode, String country) {
+    public Address(int streetNumber, String streetName, String city, int postCode, String country) {
         this.streetNumber = streetNumber;
         this.streetName = streetName;
         this.city = city;

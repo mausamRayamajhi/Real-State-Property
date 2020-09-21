@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package realstate;
+package realstate.model;
 
+import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 /**
@@ -15,7 +16,10 @@ import javax.persistence.MappedSuperclass;
 public class Property extends BaseEntity{
 
     private Address address;
+    @Column(length = 2000)
     private String description;
+    
+    @Column(nullable = false)
     private String type;
     private int bedroom;
     private int bathroom;
