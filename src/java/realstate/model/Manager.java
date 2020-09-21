@@ -44,7 +44,7 @@ public class Manager extends BaseEntity {
     public Manager() {
     }
 
-    public Manager(String firstName, String lastName, int phone, int mobile, String email, Long id ,RentProperty rentalProperty) {
+    public Manager(String firstName, String lastName, int phone, int mobile, String email, Long id) {
         super(id);
         this.firstName = firstName;
         this.lastName = lastName;

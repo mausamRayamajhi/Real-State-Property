@@ -7,6 +7,7 @@ package realstate.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import realstate.model.EJB.ManagerEJB;
@@ -20,15 +21,15 @@ import realstate.model.Manager;
 @RequestScoped
 public class ManagerController {
     
+    @EJB
     private ManagerEJB managerEJB;
     private Manager manager =  new Manager();
     private List<Manager> managerList = new ArrayList<Manager>();
     
     
      public String doCreateManager() {
-         System.out.println("Manager info = "+manager.toString());
         manager = managerEJB.createManager(manager);
-       // managerList = managerEJB.findManagers();
+        managerList = managerEJB.findManagers();
         return "listManager.xhtml";
     }
 
