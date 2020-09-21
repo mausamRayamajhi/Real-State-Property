@@ -14,7 +14,7 @@ import realstate.model.EJB.ManagerEJB;
 import realstate.model.Manager;
 
 /**
- *
+ *This is comment by bikash
  * @author Mausam Rayamajhi
  */
 @ManagedBean
