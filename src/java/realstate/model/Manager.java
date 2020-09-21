@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -21,6 +22,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "property_manager")
+@NamedQuery(name = "findAllManagers", query = "SELECT m FROM Manager m")
 public class Manager extends BaseEntity {
     private String firstName;
     private String lastName;

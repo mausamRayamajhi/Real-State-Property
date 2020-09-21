@@ -8,6 +8,7 @@ package realstate.model;
 
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -23,6 +24,7 @@ import javax.persistence.Table;
 @Table(name = "Rent_Property")
 public class RentProperty extends Property {
     
+    @Column(nullable = false)
      private double salePrice;
      private boolean isFurnished;
      
