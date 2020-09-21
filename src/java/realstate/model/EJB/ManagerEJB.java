@@ -6,6 +6,7 @@
 package realstate.model.EJB;
 
 import java.util.List;
+import javax.ejb.Stateful;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
@@ -17,7 +18,7 @@ import realstate.model.Manager;
  *
  * @author Mausam Rayamajhi
  */
-@Stateless
+@Stateful
 public class ManagerEJB {
       // Attributes             
     @PersistenceContext(unitName = "W8P1PU")

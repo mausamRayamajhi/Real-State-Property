@@ -8,4 +8,17 @@ asadmin create-jdbc-connection-pool --datasourceclassname=org.apache.derby.jdbc.
 asadmin ping-connection-pool realstatePool
 
 
-asadmin create-jdbc-resource --connectionpoolid W8P1Pool jdbc/realstatedb
+asadmin create-jdbc-resource --connectionpoolid realstatePool jdbc/realstatedb
+
+
+# Git command
+
+git status
+
+git add .
+
+git commit -m "Message"
+
+git pull
+
+git push
