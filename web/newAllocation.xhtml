@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+    <title>Create a new  Allocation  </title>
+    <style>
+           body{background-color: #F0FFF0;}
+        </style>
+    </h:head>
+    <h:body>
+        <h1 style="color: white; font-size: 30px; background-color: navy; padding: 5px" >Create a new  Allocation</h1>
+        <br/>
+        <h:form>
+        <h:panelGrid columns="3" >
+            <h:outputLabel value="Property Manager: "/>
+            <h:selectOneMenu value="#{user.favCoffee1}">
+                    <f:selectItem itemValue="Cream Latte" itemLabel="Coffee3 - Cream Latte" />
+                    <f:selectItem itemValue="Extreme Mocha" itemLabel="Coffee3 - Extreme Mocha" />
+                    <f:selectItem itemValue="Buena Vista" itemLabel="Coffee3 - Buena Vista" />
+            </h:selectOneMenu>
+            <br/>
+                <h:outputLabel value="Sale Property: "/>
+                <h:selectOneMenu value="#{user.favCoffee1}">
+                    <f:selectItem itemValue="Cream Latte" itemLabel="Coffee3 - Cream Latte" />
+                    <f:selectItem itemValue="Extreme Mocha" itemLabel="Coffee3 - Extreme Mocha" />
+                    <f:selectItem itemValue="Buena Vista" itemLabel="Coffee3 - Buena Vista" />
+                </h:selectOneMenu>
+                <h:commandButton value="Allocate" action="#{bookController.doCreateBook}"/>
+            <br/>
+                <h:outputLabel value="Rent Property: "/>
+                <h:selectOneMenu value="#{user.favCoffee1}">
+                    <f:selectItem itemValue="Cream Latte" itemLabel="Coffee3 - Cream Latte" />
+                    <f:selectItem itemValue="Extreme Mocha" itemLabel="Coffee3 - Extreme Mocha" />
+                    <f:selectItem itemValue="Buena Vista" itemLabel="Coffee3 - Buena Vista" />
+                </h:selectOneMenu>
+                <h:commandButton value="Allocate" action="#{bookController.doCreateBook}"/>
+         
+        </h:panelGrid>
+
+        </h:form>
+        <hr/>
+        <a href="listPropertyManager.faces">The list of Allocations</a> |
+        <a href="mainPage.faces"> Go to Main Page</a> <br/><br/>
+      
+    </h:body>
+</html>
+
