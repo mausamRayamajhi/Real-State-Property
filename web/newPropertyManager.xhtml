@@ -14,25 +14,25 @@
         <h:form>
         <h:panelGrid columns="2" >
             <h:outputLabel value="First Name: "/>
-            <h:inputText value="#{bookController.book.isbn}"/>
+            <h:inputText value="#{managerController.manager.firstName}"/>
 
             <h:outputLabel value="Last Name: "/>
-            <h:inputText value="#{bookController.book.title}"/>
+            <h:inputText value="#{managerController.manager.lastName}"/>
 
             <h:outputLabel value="Phone: "/>
-            <h:inputText value="#{bookController.book.price}"/>
+            <h:inputText value="#{managerController.manager.phone}"/>
 
            
             <h:outputLabel value="Mobile: "/>
-            <h:inputText value="#{bookController.book.nbOfPage}"/>
+            <h:inputText value="#{managerController.manager.mobile}"/>
 
             <h:outputLabel value="Email: "/>
-            <h:inputText value="#{bookController.book.illustrations}"/>
+            <h:inputText value="#{managerController.manager.email}"/>
             
          
 
         </h:panelGrid>
-        <h:commandButton value="CREATE" action="#{bookController.doCreateBook}"/>
+        <h:commandButton value="CREATE" action="#{managerController.doCreateManager}"/>
 
         </h:form>
         <hr/>

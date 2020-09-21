@@ -30,13 +30,13 @@ public class Manager extends BaseEntity {
     private int mobile;
     private String email;
     
-     @OneToMany(cascade = CascadeType.ALL)
-     @JoinTable(name = "Rent_Property_Allocation")
-     private List<RentProperty> rentPropertys;
-     
-     @OneToMany(cascade = CascadeType.ALL)
-     @JoinTable(name = "Sales_Property_Allocation")
-     private List<SaleProperty> salePropertys;
+//     @OneToMany(cascade = CascadeType.ALL)
+//     @JoinTable(name = "Rent_Property_Allocation")
+//     private List<RentProperty> rentPropertys;
+//     
+//     @OneToMany(cascade = CascadeType.ALL)
+//     @JoinTable(name = "Sales_Property_Allocation")
+//     private List<SaleProperty> salePropertys;
 
 
    

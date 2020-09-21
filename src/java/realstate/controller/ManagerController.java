@@ -26,8 +26,9 @@ public class ManagerController {
     
     
      public String doCreateManager() {
+         System.out.println("Manager info = "+manager.toString());
         manager = managerEJB.createManager(manager);
-        managerList = managerEJB.findManagers();
+       // managerList = managerEJB.findManagers();
         return "listManager.xhtml";
     }
 

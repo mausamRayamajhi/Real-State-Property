@@ -19,7 +19,7 @@ public class BookController {
     // Public Methods           
     public String doCreateBook() {
         book = bookEJB.createBook(book);
-        bookList = bookEJB.findBooks();
+        //bookList = bookEJB.findBooks();
         return "listBooks.xhtml";
     }
 

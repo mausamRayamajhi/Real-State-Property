@@ -26,7 +26,7 @@ public class ManagerEJB {
 
     // Public Methods           
     public List<Manager> findManagers() {
-        TypedQuery<Manager> query = em.createNamedQuery("findAllManagers", realstate.model.Manager.class);
+        TypedQuery<Manager> query = em.createNamedQuery("findAllManagers", Manager.class);
         return query.getResultList();
     }
 
