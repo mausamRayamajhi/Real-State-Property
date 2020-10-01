@@ -33,11 +33,7 @@ public class Manager extends BaseEntity {
     private int mobile;
     private String email;
     
-    
-
-
    
-
     public Manager() {
     }
 

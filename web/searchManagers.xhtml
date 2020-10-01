@@ -13,11 +13,11 @@
         <br/>
         <h:form>
             <h:outputLabel value="Manager First Name: "/>
-            <h:inputText value="#{userBean.name}"/><br/><br/>
+            <h:inputText value="#{managerController.manager.firstName}"/><br/><br/>
             
             <h:outputLabel value="Manager Last Name: "/>
-            <h:inputText value="#{userBean.name}"/><br/><br/>
-            <h:commandButton action="#{userBean.processAction}" value="Submit"/>
+            <h:inputText value="#{managerController.manager.lastName}"/><br/><br/>
+            <h:commandButton action="#{managerController.searchManager()}" value="Search"/>
         </h:form>
         <hr/>
         <a href="listManager.faces">The list of Property Manager</a> |

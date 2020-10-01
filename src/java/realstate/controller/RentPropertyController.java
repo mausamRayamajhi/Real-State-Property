@@ -22,10 +22,12 @@ import realstate.model.SaleProperty;
 @ManagedBean
 @RequestScoped
 public class RentPropertyController {
-       @EJB
+    
+    @EJB
     private RentPropertyEJB eJB;
     private RentProperty property = new RentProperty();
-    private List<RentProperty> propertyList = new ArrayList<RentProperty>();
+
+    private List<RentProperty> propertyList = new ArrayList<>();
 
     public String createRentProperty() {
         property = eJB.createRentProperty(property);
@@ -42,5 +44,21 @@ public class RentPropertyController {
     
     public List<RentProperty> getRentPropertyList() {
         return eJB.findRentPropertse();
+    }
+    
+    public RentProperty getProperty() {
+        return property;
+    }
+
+    public void setProperty(RentProperty property) {
+        this.property = property;
+    }
+
+    public List<RentProperty> getPropertyList() {
+        return propertyList;
+    }
+
+    public void setPropertyList(List<RentProperty> propertyList) {
+        this.propertyList = propertyList;
     }
 }

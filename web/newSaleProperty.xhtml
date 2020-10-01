@@ -14,40 +14,40 @@
     <h:form>
         <h:panelGrid columns="2" >
             <h:outputLabel value="Property Type: "/>
-            <h:inputText value="#{bookController.book.isbn}"/>
+            <h:inputText value="#{salePropertyController.saleProperty.type}"/>
 
             <h:outputLabel value="No. of Bedrooms: "/>
-            <h:inputText value="#{bookController.book.title}"/>
+            <h:inputText value="#{salePropertyController.saleProperty.bedroom}"/>
 
             <h:outputLabel value="No. of bathrooms: "/>
-            <h:inputText value="#{bookController.book.price}"/>
+            <h:inputText value="#{salePropertyController.saleProperty.bathroom}"/>
 
             <h:outputLabel value=" Property Description: "/>
-            <h:inputTextarea value="#{bookController.book.description}" cols="20" rows="5"/>
+            <h:inputTextarea value="#{salePropertyController.saleProperty.description}" cols="20" rows="5"/>
 
             <h:outputLabel value="Street Number: "/>
-            <h:inputText value="#{bookController.book.nbOfPage}"/>
+            <h:inputText value="#{salePropertyController.address.streetNumber}"/>
 
             <h:outputLabel value="Street Name: "/>
-            <h:inputText value="#{bookController.book.illustrations}"/>
+            <h:inputText value="#{salePropertyController.address.streetName}"/>
             
             <h:outputLabel value="City: "/>
-            <h:inputText value="#{bookController.book.illustrations}"/>
+            <h:inputText value="#{salePropertyController.address.city}"/>
             
             <h:outputLabel value="Postcode: "/>
-            <h:inputText value="#{bookController.book.illustrations}"/>
+            <h:inputText value="#{salePropertyController.address.postCode}"/>
             
             <h:outputLabel value="Country: "/>
-            <h:inputText value="#{bookController.book.illustrations}"/>
+            <h:inputText value="#{salePropertyController.address.country}"/>
             
             <h:outputLabel value="Sale Price: "/>
-            <h:inputText value="#{bookController.book.illustrations}"/>
+            <h:inputText value="#{salePropertyController.saleProperty.salePrice}"/>
 
 
 
 
         </h:panelGrid>
-        <h:commandButton value="CREATE" action="#{bookController.doCreateBook}"/>
+        <h:commandButton value="CREATE" action="#{salePropertyController.doCreateSaleProperty}"/>
 
     </h:form>
     <hr/>
