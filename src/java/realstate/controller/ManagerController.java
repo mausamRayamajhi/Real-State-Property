@@ -15,7 +15,7 @@ import realstate.model.Manager;
 
 /**
  * This is comment by bikash
- *
+ * This is a comment by Prativa
  * @author Mausam Rayamajhi
  */
 @ManagedBean
