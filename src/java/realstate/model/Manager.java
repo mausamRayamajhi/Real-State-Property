@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -22,7 +23,11 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "property_manager")
-@NamedQuery(name = "findAllManagers", query = "SELECT m FROM Manager m")
+@NamedQueries({
+    @NamedQuery(name = "findAllManagers", query = "SELECT m FROM Manager m"),
+    @NamedQuery(name="searchManager", query="select m from Manager where firstName=:firstName && lastName:lastName"),
+})
+
 public class Manager extends BaseEntity {
     private String firstName;
     private String lastName;

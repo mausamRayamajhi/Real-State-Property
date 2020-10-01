@@ -45,12 +45,8 @@ public class ManagerEJB {
     }
     
     public Manager searchManager(String firstName,String lastName) {
-//        Manager manager = em.find(Manager.class, managerId);
-//        if (manager == null) {
-//            throw new EntityNotFoundException("Can't find Artist for ID "
-//                + managerId);
-//        }
-//        return manager;
-return null;
+        TypedQuery<Manager> query = em.createNamedQuery("searchManager", Manager.class);
+        return query.getSingleResult();
+
     }
 }

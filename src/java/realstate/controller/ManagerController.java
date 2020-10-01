@@ -14,42 +14,71 @@ import realstate.model.EJB.ManagerEJB;
 import realstate.model.Manager;
 
 /**
- *This is comment by bikash
+ * This is comment by bikash
+ *
  * @author Mausam Rayamajhi
  */
 @ManagedBean
 @RequestScoped
 public class ManagerController {
-    
+
     @EJB
     private ManagerEJB managerEJB;
-    private Manager manager =  new Manager();
+    private Manager manager = new Manager();
     private List<Manager> managerList = new ArrayList<Manager>();
-    
-    
-     public String doCreateManager() {
+
+    /**
+     * doCreateManager() method create new manager
+     * @return xhtml page containing data of manager list
+     */
+    public String doCreateManager() {
         manager = managerEJB.createManager(manager);
         managerList = managerEJB.findManagers();
-      
-        managerList.forEach(manager->  System.out.println("Single Manager = "+manager.toString()));
+
+        managerList.forEach(manager -> System.out.println("Single Manager = " + manager.toString()));
         return "listManager.xhtml";
     }
 
+    /**
+     * getManager() method return single manager
+     * @return Manager
+     */
     public Manager getManager() {
         return manager;
+    }
+
+    /**
+     * getManagerById() method return manager by ID
+     * @return Manager
+     */
+    public Manager getManagerById() {
+        manager = managerEJB.findById(manager.getId());
+        return manager;
+    }
+
+    /**
+     * searchManager() method search manager by first name and last name
+     * @return single Manager object
+     */
+    public Manager searchManager() {
+
+        return managerEJB.searchManager(manager.getFirstName(), manager.getLastName());
     }
 
     public void setManager(Manager manager) {
         this.manager = manager;
     }
 
+    /**
+     * getManagerList() gets all managerlist from db
+     * @return List of managers
+     */
     public List<Manager> getManagerList() {
-        return managerList;
+        return managerEJB.findManagers();
     }
 
     public void setManagerList(List<Manager> managerList) {
         this.managerList = managerList;
     }
-     
-     
+
 }
