@@ -25,15 +25,15 @@ public class SalePropertyController {
 
     @EJB
     private SalePropertyEJB salePropertyEJB;
-    private SaleProperty saleProperty = new SaleProperty();
+    private SaleProperty property = new SaleProperty();
 
     private List<SaleProperty> salePropertyList = new ArrayList<>();
-    private Address address = new Address();
+
 
     public String doCreateSaleProperty() {
-        System.out.println("DATA = "+saleProperty.toString());
-        saleProperty.setAddress(address);
-        saleProperty = salePropertyEJB.createSaleProperty(saleProperty);
+        System.out.println("DATA = "+property.toString());
+  
+        property = salePropertyEJB.createSaleProperty(property);
 
         salePropertyList = salePropertyEJB.findSalePropertse();
 
@@ -41,34 +41,34 @@ public class SalePropertyController {
     }
     
     public SaleProperty getManagerById() {
-        saleProperty = salePropertyEJB.findById(saleProperty.getId());
-        return saleProperty;
+        property = salePropertyEJB.findById(property.getId());
+        return property;
     }
     
     public List<SaleProperty> getSalePropertyList() {
         return salePropertyEJB.findSalePropertse();
     }
     
-     public SalePropertyEJB getSaleProperty() {
-        return salePropertyEJB;
-    }
+    
 
     public void setSaleProperty(SaleProperty saleProperty) {
-        this.saleProperty = saleProperty;
+        this.property = saleProperty;
     }
 
     public void setSalePropertyList(List<SaleProperty> salePropertyList) {
         this.salePropertyList = salePropertyList;
     }
+
+    public SaleProperty getProperty() {
+        return property;
+    }
+
+    public void setProperty(SaleProperty property) {
+        this.property = property;
+    }
    
-  
+ 
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
+   
     
 }
