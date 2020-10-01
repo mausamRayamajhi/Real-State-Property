@@ -38,6 +38,14 @@ public class ManagerController {
         managerList.forEach(manager -> System.out.println("Single Manager = " + manager.toString()));
         return "listManager.xhtml";
     }
+    
+    
+    public String viewManager(){
+    
+        manager.toString();
+        return"viewManager.xhtml";
+    
+    }
 
     /**
      * getManager() method return single manager
