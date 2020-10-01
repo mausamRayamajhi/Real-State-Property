@@ -6,10 +6,14 @@
 package realstate.model;
 
 
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinTable;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -25,6 +29,12 @@ public class RentProperty extends Property {
     @Column(nullable = false)
      private double salePrice;
      private boolean isFurnished;
+     
+//      @OneToMany(cascade = CascadeType.ALL, mappedBy = "rentProperty")
+//     @JoinTable(name = "Rent_Property_Allocation")
+//     private List<Allocation> rentPropertys;
+//     
+  
      
     
     public RentProperty() {

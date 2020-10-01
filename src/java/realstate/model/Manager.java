@@ -33,13 +33,7 @@ public class Manager extends BaseEntity {
     private int mobile;
     private String email;
     
-     @OneToMany(cascade = CascadeType.ALL)
-     @JoinTable(name = "Rent_Property_Allocation")
-     private List<RentProperty> rentPropertys;
-     
-     @OneToMany(cascade = CascadeType.ALL)
-     @JoinTable(name = "Sales_Property_Allocation")
-     private List<SaleProperty> salePropertys;
+    
 
 
    
@@ -102,21 +96,7 @@ public class Manager extends BaseEntity {
         return "ManagerID = "+ super.getId()+" Manager{" + "firstName=" + firstName + ", lastName=" + lastName + ", phone=" + phone + ", mobile=" + mobile + ", email=" + email + '}';
     }
 
-    public List<RentProperty> getRentPropertys() {
-        return rentPropertys;
-    }
-
-    public void setRentPropertys(List<RentProperty> rentPropertys) {
-        this.rentPropertys = rentPropertys;
-    }
-
-    public List<SaleProperty> getSalePropertys() {
-        return salePropertys;
-    }
-
-    public void setSalePropertys(List<SaleProperty> salePropertys) {
-        this.salePropertys = salePropertys;
-    }
+   
     
     
     

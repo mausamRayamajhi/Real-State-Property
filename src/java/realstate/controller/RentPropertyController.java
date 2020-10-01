@@ -32,7 +32,7 @@ public class RentPropertyController {
 
         propertyList = eJB.findRentPropertse();
 
-        return "listSaleProperty.xhtml";
+        return "listRentProperty.xhtml";
     }
     
     public RentProperty getManagerById() {
