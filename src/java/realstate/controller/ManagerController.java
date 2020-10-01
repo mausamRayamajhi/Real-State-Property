@@ -29,26 +29,31 @@ public class ManagerController {
 
     /**
      * doCreateManager() method create new manager
+     *
      * @return xhtml page containing data of manager list
      */
     public String doCreateManager() {
+//        ArrayList<RentProperty> rent = new ArrayList<>();
+//       
+//        rent.add(new RentProperty(1l,15,new Address(1, "asdf", "asdf", 3, "asf"),"sdf","asdf",2,23,true));
+//manager.setRentPropertys(rent);
         manager = managerEJB.createManager(manager);
+
         managerList = managerEJB.findManagers();
 
-        managerList.forEach(manager -> System.out.println("Single Manager = " + manager.toString()));
         return "listManager.xhtml";
     }
-    
-    
-    public String viewManager(){
-    
+
+    public String viewManager() {
+
         manager.toString();
-        return"viewManager.xhtml";
-    
+        return "viewManager.xhtml";
+
     }
 
     /**
      * getManager() method return single manager
+     *
      * @return Manager
      */
     public Manager getManager() {
@@ -57,6 +62,7 @@ public class ManagerController {
 
     /**
      * getManagerById() method return manager by ID
+     *
      * @return Manager
      */
     public Manager getManagerById() {
@@ -66,6 +72,7 @@ public class ManagerController {
 
     /**
      * searchManager() method search manager by first name and last name
+     *
      * @return single Manager object
      */
     public Manager searchManager() {
@@ -79,6 +86,7 @@ public class ManagerController {
 
     /**
      * getManagerList() gets all managerlist from db
+     *
      * @return List of managers
      */
     public List<Manager> getManagerList() {
@@ -89,4 +97,5 @@ public class ManagerController {
         this.managerList = managerList;
     }
 
+    
 }

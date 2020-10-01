@@ -5,37 +5,32 @@
  */
 package realstate.model;
 
-import java.io.Serializable;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
  *
  * @author Mausam Rayamajhi
  */
-
 @Entity
 @Table(name = "Sale_Property")
+@NamedQueries({
+    @NamedQuery(name = "findAllSalePropertise", query = "SELECT m FROM SaleProperty m"),})
 public class SaleProperty extends Property {
-    
+
     @Column(nullable = false)
     private double salePrice;
 
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "saleProperty",targetEntity=w8p1.SaleProperty.class)
-//     private Manager manager;
-    
     public SaleProperty() {
     }
 
-    public SaleProperty(Long id,double salePrice, Address address, String description, String type, int bedroom, int bathroom) {
+    public SaleProperty(Long id, double salePrice, Address address, String description, String type, int bedroom, int bathroom) {
         super(id, address, description, type, bedroom, bathroom);
-        this.salePrice=salePrice;
+        this.salePrice = salePrice;
     }
-
-   
 
     public double getSalePrice() {
         return salePrice;
@@ -49,7 +44,5 @@ public class SaleProperty extends Property {
     public String toString() {
         return "SaleProperty{" + "salePrice=" + salePrice + '}';
     }
-    
-    
-    
+
 }

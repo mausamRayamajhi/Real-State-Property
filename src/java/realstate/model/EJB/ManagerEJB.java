@@ -7,7 +7,6 @@ package realstate.model.EJB;
 
 import java.util.List;
 import javax.ejb.Stateful;
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.PersistenceContext;
@@ -47,6 +46,6 @@ public class ManagerEJB {
     public Manager searchManager(String firstName,String lastName) {
         TypedQuery<Manager> query = em.createNamedQuery("searchManager", Manager.class);
         return query.getSingleResult();
-
     }
+  
 }

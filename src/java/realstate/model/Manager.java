@@ -9,9 +9,7 @@ package realstate.model;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -25,7 +23,7 @@ import javax.persistence.Table;
 @Table(name = "property_manager")
 @NamedQueries({
     @NamedQuery(name = "findAllManagers", query = "SELECT m FROM Manager m"),
-//    @NamedQuery(name="searchManager", query="select m from Manager where firstName=:firstName && lastName:lastName"),
+    @NamedQuery(name="searchManager", query = "select m from Manager m where m.firstName=:firstName AND m.lastName=:lastName"),
 })
 
 public class Manager extends BaseEntity {
@@ -35,13 +33,13 @@ public class Manager extends BaseEntity {
     private int mobile;
     private String email;
     
-//     @OneToMany(cascade = CascadeType.ALL)
-//     @JoinTable(name = "Rent_Property_Allocation")
-//     private List<RentProperty> rentPropertys;
-//     
-//     @OneToMany(cascade = CascadeType.ALL)
-//     @JoinTable(name = "Sales_Property_Allocation")
-//     private List<SaleProperty> salePropertys;
+     @OneToMany(cascade = CascadeType.ALL)
+     @JoinTable(name = "Rent_Property_Allocation")
+     private List<RentProperty> rentPropertys;
+     
+     @OneToMany(cascade = CascadeType.ALL)
+     @JoinTable(name = "Sales_Property_Allocation")
+     private List<SaleProperty> salePropertys;
 
 
    
@@ -102,6 +100,22 @@ public class Manager extends BaseEntity {
     @Override
     public String toString() {
         return "ManagerID = "+ super.getId()+" Manager{" + "firstName=" + firstName + ", lastName=" + lastName + ", phone=" + phone + ", mobile=" + mobile + ", email=" + email + '}';
+    }
+
+    public List<RentProperty> getRentPropertys() {
+        return rentPropertys;
+    }
+
+    public void setRentPropertys(List<RentProperty> rentPropertys) {
+        this.rentPropertys = rentPropertys;
+    }
+
+    public List<SaleProperty> getSalePropertys() {
+        return salePropertys;
+    }
+
+    public void setSalePropertys(List<SaleProperty> salePropertys) {
+        this.salePropertys = salePropertys;
     }
     
     

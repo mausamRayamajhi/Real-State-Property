@@ -6,14 +6,10 @@
 package realstate.model;
 
 
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -22,6 +18,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Rent_Property")
+@NamedQueries({
+    @NamedQuery(name = "findAllRentPropertise", query = "SELECT m FROM RentProperty m"),})
 public class RentProperty extends Property {
     
     @Column(nullable = false)
