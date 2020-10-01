@@ -3,10 +3,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Search Property Manager</title>
+        <style>
+            body{background-color: #F0FFF0;}
+        </style>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h1 style="color: white; font-size: 30px; background-color: navy; padding: 5px" >Search a Property Manager</h1>
+        <br/>
+        <h:form>
+            <h:outputLabel value="Manager First Name: "/>
+            <h:inputText value="#{userBean.name}"/><br/><br/>
+            
+            <h:outputLabel value="Manager Last Name: "/>
+            <h:inputText value="#{userBean.name}"/><br/><br/>
+            <h:commandButton action="#{userBean.processAction}" value="Submit"/>
+        </h:form>
+        <hr/>
+        <a href="listPropertyManager.faces">The list of Property Manager</a> |
+        <a href="mainPage.faces"> Go to Main Page</a> <br/><br/>
     </h:body>
 </html>
 
