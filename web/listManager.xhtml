@@ -34,7 +34,7 @@
                    <h:outputText value="Actions"/>
                  
             </f:facet>
-            <h:commandLink action="#{managerController.viewManager}" value="View Details"/>
+            <h:commandLink action="#{managerController.managerList}" value="View Details"/>
         </h:column>
 
 
@@ -43,7 +43,7 @@
     </h:dataTable>
           
           
-          <h3> Total Property Managers:  <h:outputText value=""/></h3>
+          <h3> Total Property Managers:  <h:outputText value="#{managerController.managerList.size.toString}"/></h3>
   
      
  
