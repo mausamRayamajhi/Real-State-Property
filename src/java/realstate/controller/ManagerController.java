@@ -30,6 +30,8 @@ public class ManagerController {
      public String doCreateManager() {
         manager = managerEJB.createManager(manager);
         managerList = managerEJB.findManagers();
+      
+        managerList.forEach(manager->  System.out.println("Single Manager = "+manager.toString()));
         return "listManager.xhtml";
     }
 
