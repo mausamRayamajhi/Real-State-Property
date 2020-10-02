@@ -54,7 +54,7 @@ public class SaleProperty extends Property {
 
     @Override
     public String toString() {
-        return "SaleProperty{" + "salePrice=" + salePrice + '}';
+        return super.toString()+" SaleProperty{" + "salePrice=" + salePrice + '}';
     }
 
     @Override

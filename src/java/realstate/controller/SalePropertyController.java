@@ -33,34 +33,32 @@ public class SalePropertyController {
     private Address address = new Address();
     private List<SaleProperty> salePropertyList = new ArrayList<SaleProperty>();
 
-
     public String doCreateSaleProperty() {
-        System.out.println("DATA = "+saleProperty.toString());
-            saleProperty.setAddress(address);
+        System.out.println("DATA = " + saleProperty.toString());
+        saleProperty.setAddress(address);
         saleProperty = salePropertyEJB.createSaleProperty(saleProperty);
 
         salePropertyList = salePropertyEJB.findSalePropertse();
 
         return "listSaleProperty.xhtml";
     }
-    
-    public SaleProperty getManagerById() {
-        saleProperty = salePropertyEJB.findById(saleProperty.getId());
-        return saleProperty;
-    }
-    
+
+//    public SaleProperty getManagerById() {
+////        saleProperty = salePropertyEJB.findById(saleProperty.getId());
+//        return saleProperty;
+//    }
     public List<SaleProperty> getSalePropertyList() {
         return salePropertyEJB.findSalePropertse();
     }
-    
-    public SaleProperty getSaleProperty() {
-           return saleProperty;
-       }
-    public Address getAddress() {
-           return address;
-       }
 
-    
+    public SaleProperty getSaleProperty() {
+
+        return saleProperty;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
 
     public void setSaleProperty(SaleProperty saleProperty) {
         this.saleProperty = saleProperty;
@@ -70,43 +68,23 @@ public class SalePropertyController {
         this.salePropertyList = salePropertyList;
     }
 
-   
-
     public void setProperty(SaleProperty saleProperty) {
         this.saleProperty = saleProperty;
     }
-   
- 
-   public String viewSaleProperty() {
+
+    public String viewSaleProperty() {
         FacesContext fc = FacesContext.getCurrentInstance();
         Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
-        System.out.print("ID = "+params.get("id"));
-        address.getStreetNumber();
-        address.getStreetName();
-        address.getCity();
-        address.getPostCode();
-        address.getCountry();
-        saleProperty.getAddress();
-        saleProperty.toString();
-        saleProperty.setId(Long.parseLong(params.get("id")));
-        saleProperty = salePropertyEJB.findById(saleProperty.getId());
+        saleProperty = salePropertyEJB.findById(Long.parseLong(params.get("id")));
         return "viewSaleProperty.xhtml";
-
     }
-   
-      public String searchSaleProperty() {
-       
-//  FacesContext fc = FacesContext.getCurrentInstance();
-//        Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
-//       System.out.print("ID = "+params.get("id"));
-//       manager.setFirstName(params.get("firstName"));
-//          manager.setLastName(params.get("lastName"));
+
+    public String searchSaleProperty() {
 
         saleProperty = salePropertyEJB.findById(saleProperty.getId());
-         System.out.print("search = "+saleProperty.toString());
-         
-         return "viewSaleProperty.xhtml";
+        System.out.print("search = " + saleProperty.toString());
+
+        return "viewSaleProperty.xhtml";
     }
 
-    
 }

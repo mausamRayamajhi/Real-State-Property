@@ -81,6 +81,11 @@ public class Property extends BaseEntity{
         this.address = address;
     }
 
+    @Override
+    public String toString() {
+        return super.toString()+ " Property{" + "address=" + address + ", description=" + description + ", type=" + type + ", bedroom=" + bedroom + ", bathroom=" + bathroom + '}';
+    }
+
    
 
    

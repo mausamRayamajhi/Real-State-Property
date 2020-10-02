@@ -13,6 +13,7 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
 import realstate.model.Allocation;
 import realstate.model.EJB.AllocationEJB;
+import realstate.model.Manager;
 
 
 /**
@@ -82,4 +83,9 @@ public class AllocationController {
     public void setAllocationList(List<Allocation> allocationList) {
         this.allocationList = allocationList;
     }
+    
+     public Allocation getAllocation() {
+        return allocation;
+    }
+    
 }

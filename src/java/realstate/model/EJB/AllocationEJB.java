@@ -6,6 +6,7 @@
 package realstate.model.EJB;
 
 import java.util.List;
+import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.PersistenceContext;
@@ -16,6 +17,7 @@ import realstate.model.Allocation;
  *
  * @author Mausam Rayamajhi
  */
+@Stateful
 public class AllocationEJB {
 
     @PersistenceContext(unitName = "W8P1PU")

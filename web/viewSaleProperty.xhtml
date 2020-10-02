@@ -9,7 +9,8 @@
     <h:body>
         <h1 style="color: white; font-size: 30px; background-color: navy; padding: 5px" > The Sale Property of ID :<h:outputText value="#{salePropertyController.saleProperty.id}"/></h1>
     <br/>
-        <h:panelGrid columns="2" >
+        <h:panelGrid columns="2"  >
+          
             <h:outputLabel value="Property Type: "/>
             <h:outputText value="#{salePropertyController.saleProperty.type}"/>
 
@@ -23,7 +24,8 @@
             <h:outputText value="#{salePropertyController.saleProperty.description}"/>
 
             <h:outputLabel value="Address: "/>
-            <h:outputText value="#{salePropertyController.address.toString()}"/>
+            <h:outputText value="#{salePropertyController.saleProperty.address.streetNumber} #{salePropertyController.saleProperty.address.streetName}, #{salePropertyController.saleProperty.address.city} #{salePropertyController.saleProperty.address.country}"/>
+            
             
             <h:outputLabel value="Sale Price: "/>
             <h:outputText value="#{salePropertyController.saleProperty.salePrice}"/>
