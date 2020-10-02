@@ -93,7 +93,7 @@ public class ManagerController {
 
          managerList = managerEJB.searchManager(manager.getFirstName(), manager.getLastName());
          System.out.print("search = "+managerList.toString());
-         return "listManager.xhtml";
+         return "searchlistManager.xhtml";
     }
 
     public void setManager(Manager manager) {
