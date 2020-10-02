@@ -24,15 +24,14 @@ import javax.persistence.Table;
 @Table(name = "Rent_Property")
 @NamedQueries({
     @NamedQuery(name = "findAllRentPropertise", query = "SELECT m FROM RentProperty m"),})
-public class RentProperty  extends BaseEntity{
+public class RentProperty  extends Property{
     
     @Column(nullable = false)
      private double weeklyRent;
      private boolean isFurnished;
      
-//      @OneToMany(cascade = CascadeType.ALL, mappedBy = "rentProperty")
-//     @JoinTable(name = "Rent_Property_Allocation")
-//     private List<Allocation> rentPropertys;
+     @OneToMany(cascade = CascadeType.ALL, mappedBy = "rentProperty")
+     private List<Allocation> allocations;
 //     
   
      
@@ -40,8 +39,8 @@ public class RentProperty  extends BaseEntity{
     public RentProperty() {
     }
 
-    public RentProperty(Long id,double weeklyRent, boolean isFurnished) {
-//        super(id, description, type, bedroom, bathroom);
+    public RentProperty(Long id,double weeklyRent, boolean isFurnished,String description, String type, int bedroom, int bathroom, Address addres) {
+        super(id,  description,  type,  bedroom,  bathroom,  addres);
         this.weeklyRent = weeklyRent;
         this.isFurnished = isFurnished;
     }

@@ -28,6 +28,8 @@ public class SaleProperty extends Property {
     @Column(nullable = false)
     private double salePrice;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "saleProperty")
+     private List<Allocation> allocations;
 
     public SaleProperty() {
 //        address = new Address();
