@@ -29,11 +29,7 @@ public class RentProperty  extends Property{
      private double weekly_Rent;
      private boolean isFurnished;
      
-     @OneToMany(cascade = CascadeType.ALL, mappedBy = "rentProperty")
-     private List<Allocation> allocations;
-//     
-  
-     
+ 
     
     public RentProperty() {
     }

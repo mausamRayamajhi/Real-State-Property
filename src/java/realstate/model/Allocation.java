@@ -27,15 +27,16 @@ import javax.persistence.Table;
 public class Allocation extends BaseEntity {
 
     @ManyToOne
-    @JoinColumn(name = "manager_id", nullable = false)
+    @JoinColumn( nullable = false)
+    
     private Manager manager;
 
     @ManyToOne
-    @JoinColumn(name = "rent_Property_id", nullable = true)
+    @JoinColumn( nullable = true)
     private RentProperty rentProperty;
 
     @ManyToOne
-    @JoinColumn(name = "sale_Property_id", nullable = true)
+    @JoinColumn( nullable = true)
     private SaleProperty saleProperty;
 
     private LocalDateTime date;

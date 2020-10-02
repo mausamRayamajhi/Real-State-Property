@@ -15,34 +15,34 @@
 
           <br/>
           <h3 style="color: green;"> Successfully created the allocation for  <h:outputText value="#{managerController.manager.firstName}"/> <h:outputText value="#{managerController.manager.lastName}"/>!!</h3>
-    <h:dataTable value="#{managerController.managerList}" var="mgr" border="1">
+          <h:dataTable value="#{allocationController.allocationList}" var="mgr" border="1">
          
         <h:column>
             <f:facet name="header">
                 <h:outputText value="ID"/>
             </f:facet>
-            <h:outputText value="#{mgr.firstName}"/>
+            <h:outputText value="#{mgr.id}"/>
         </h:column>
 
         <h:column>
             <f:facet name="header">
                 <h:outputText value="Property Manager"/>
             </f:facet>
-            <h:outputText value="#{mgr.lastName}"/>
+            <h:outputText value="#{mgr.manager.firstName}"/>
         </h:column>
         
         <h:column>
             <f:facet name="header">
                 <h:outputText value="Property"/>
             </f:facet>
-            <h:outputText value="#{mgr.lastName}"/>
+            <h:outputText value="#{mgr.rentProperty.address.streetName}"/>
         </h:column>
         
         <h:column>
             <f:facet name="header">
                 <h:outputText value="Time Created"/>
             </f:facet>
-            <h:outputText value="#{mgr.lastName}"/>
+            <h:outputText value="#{mgr.date}"/>
             <h:commandLink value="Delete"
                                 action="#{order.deleteAction(o)}" />
         </h:column>
