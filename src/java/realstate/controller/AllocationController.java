@@ -38,6 +38,7 @@ public class AllocationController {
     private RentProperty rentProperty = new RentProperty();
     private SaleProperty saleProperty = new SaleProperty();
     private List<Allocation> allocationList = new ArrayList();
+     private List<Allocation> allocationListByManager = new ArrayList();
     private Address  address = new Address();
     //private List<Manager> managerList = new ArrayList<Manager>();
 
@@ -89,8 +90,15 @@ allocationList.clear();
     public List<Allocation> getAllocationList() {
         return allocationList = allocationEJB.findAllAllocation();
     }
+    
+    
 
-  
+   public List<Allocation> getAllocationListByManager() {
+//        System.out.print("allocationListByManager = "+manager.getId());
+         allocationListByManager = allocationEJB.findByManagerId(manager.getId());
+//         System.out.print("allocationListByManager = "+allocationListByManager.toString());
+         return  allocationListByManager;
+    }
 
     
 

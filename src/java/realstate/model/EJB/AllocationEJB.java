@@ -5,7 +5,9 @@
  */
 package realstate.model.EJB;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
@@ -43,10 +45,23 @@ public class AllocationEJB {
         return allocation;
     }
 
-    public Allocation findByManagerId(Long id) {
+    public List<Allocation> findByManagerId(Long id) {
 
-        TypedQuery<Allocation> query = em.createNamedQuery("findByManagerId", Allocation.class);
-        return query.getSingleResult();
+         TypedQuery<Allocation> query = em.createNamedQuery("findAllAllocation", Allocation.class);
+        List<Allocation> resultList = query.getResultList();
+         List<Allocation> newList = new ArrayList<>();
+        
+for(Allocation a: resultList){
+//  System.out.print("aaa = "+(a.getManager().getId()== id ));
+    System.out.print("getManager id = "+a.getManager().getId( ));
+     System.out.print("Long id = "+id);
+    if(a.getManager().getId()== id){
+          System.out.print("aaa = "+a.getManager().toString() );
+          newList.add(a);
+    }
+}
+        
+        return newList;
 
     }
     
