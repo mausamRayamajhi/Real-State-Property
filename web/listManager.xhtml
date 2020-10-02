@@ -5,58 +5,63 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Real Estate Property manager</title>
-         <style>
-           body{background-color: #F0FFF0;}
+        <style>
+            body{background-color: #F0FFF0;}
         </style>
     </h:head>
     <h:body>
-          <h1 style="color: white; font-size: 30px; background-color: navy; padding: 5px" >The Current Property Manager</h1>
+        <h1 style="color: white; font-size: 30px; background-color: navy; padding: 5px" >The Current Property Manager</h1>
 
-          <br/>
-          <h3 style="color: green;"> Successfully created manager  <h:outputText value="#{managerController.manager.firstName}"/><h:outputText value="&#160;" /> <h:outputText value="#{managerController.manager.lastName}"/>!!</h3>
-    <h:dataTable value="#{managerController.managerList}" var="mgr" border="1">
-         
-        <h:column>
-            <f:facet name="header">
-                <h:outputText value="First Name"/>
-            </f:facet>
-            <h:outputText value="#{mgr.firstName}"/>
-        </h:column>
+        <br/>
+        <h3 style="color: green;"> Successfully created manager  <h:outputText value="#{managerController.manager.firstName}"/><h:outputText value="&#160;" /> <h:outputText value="#{managerController.manager.lastName}"/>!!</h3>
+        <h:dataTable value="#{managerController.managerList}" var="mgr" border="1">
 
-        <h:column>
-            <f:facet name="header">
-                <h:outputText value="Last Name"/>
-            </f:facet>
-            <h:outputText value="#{mgr.lastName}"/>
-        </h:column>
-        <h:column>
-            <f:facet name="header">
-                   <h:outputText value="Actions"/>
-                 
-            </f:facet>
-            <h:commandLink action="#{managerController.managerList}" value="View Details"/>
-        </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="First Name"/>
+                </f:facet>
+                <h:outputText value="#{mgr.firstName}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Last Name"/>
+                </f:facet>
+                <h:outputText value="#{mgr.lastName}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Actions"/>
+
+                </f:facet>
+                
+                <h:form>
+                    <h:commandButton value="view" action="#{managerController.viewManager}">
+                        <f:param id="id" name="id" value="#{mgr.id}"/>
+                    </h:commandButton>
+                </h:form>
+            </h:column>
 
 
-      
 
-    </h:dataTable>
-          
-          
-          <h3> Total Property Managers:  <h:outputText value="#{managerController.managerList.size()}"/></h3>
-  
-     
- 
-      <hr/>
+
+        </h:dataTable>
+
+
+        <h3> Total Property Managers:  <h:outputText value="#{managerController.managerList.size()}"/></h3>
+
+
+
+        <hr/>
         <a href="newPropertyManager.faces">Create a Property Manager</a> |
         <a href="mainPage.faces"> Go to Main Page</a> <br/><br/>
-      
 
-          
-          
-  
-    <hr/>
-  
+
+
+
+
+        <hr/>
+
     </h:body>
 </html>
 

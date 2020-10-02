@@ -7,9 +7,12 @@ package realstate.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import realstate.model.EJB.ManagerEJB;
 import realstate.model.Manager;
 
@@ -20,6 +23,7 @@ import realstate.model.Manager;
  */
 @ManagedBean
 @RequestScoped
+@ViewScoped
 public class ManagerController {
 
     @EJB
@@ -45,8 +49,12 @@ public class ManagerController {
     }
 
     public String viewManager() {
-
+        FacesContext fc = FacesContext.getCurrentInstance();
+        Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
+       System.out.print("ID = "+params.get("id"));
         manager.toString();
+        manager.setId(Long.parseLong(params.get("id")));
+        manager = managerEJB.findById(manager.getId());
         return "viewManager.xhtml";
 
     }
@@ -65,9 +73,9 @@ public class ManagerController {
      *
      * @return Manager
      */
-    public Manager getManagerById() {
+    public void getManagerById() {
         manager = managerEJB.findById(manager.getId());
-        return manager;
+       
     }
 
     /**
@@ -75,9 +83,17 @@ public class ManagerController {
      *
      * @return single Manager object
      */
-    public Manager searchManager() {
+    public String searchManager() {
+       
+//  FacesContext fc = FacesContext.getCurrentInstance();
+//        Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
+//       System.out.print("ID = "+params.get("id"));
+//       manager.setFirstName(params.get("firstName"));
+//          manager.setLastName(params.get("lastName"));
 
-        return managerEJB.searchManager(manager.getFirstName(), manager.getLastName());
+         managerList = managerEJB.searchManager(manager.getFirstName(), manager.getLastName());
+         System.out.print("search = "+managerList.toString());
+         return "listManager.xhtml";
     }
 
     public void setManager(Manager manager) {

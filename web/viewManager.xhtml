@@ -7,27 +7,27 @@
     </h:head>
     
     <h:body>
-        <h1 style="color: white; font-size: 30px; background-color: navy; padding: 5px" >The Property Manager of ID : <h:outputText value=""</h1>
+        <h1 style="color: white; font-size: 30px; background-color: navy; padding: 5px" >The Property Manager of ID : <h:outputText value=""/></h1>
 
           <br/>
           
           
            <h:panelGrid columns="2" >
             <h:outputLabel value="First Name: "/>
-            <h:inputText value="#{managerController.manager.firstName}"/>
+            <h:outputText value="#{managerController.manager.firstName}"/>
 
             <h:outputLabel value="Last Name: "/>
-            <h:inputText value="#{managerController.manager.lastName}"/>
+            <h:outputText value="#{managerController.manager.lastName}"/>
 
             <h:outputLabel value="Phone: "/>
-            <h:inputText value="#{managerController.manager.phone}"/>
+            <h:outputText value="#{managerController.manager.phone}"/>
 
            
             <h:outputLabel value="Mobile: "/>
-            <h:inputText value="#{managerController.manager.mobile}"/>
+            <h:outputText value="#{managerController.manager.mobile}"/>
 
             <h:outputLabel value="Email: "/>
-            <h:inputText value="#{managerController.manager.email}"/>
+            <h:outputText value="#{managerController.manager.email}"/>
             
          
 

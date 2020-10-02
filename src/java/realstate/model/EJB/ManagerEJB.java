@@ -43,9 +43,10 @@ public class ManagerEJB {
         return manager;
     }
     
-    public Manager searchManager(String firstName,String lastName) {
-        TypedQuery<Manager> query = em.createNamedQuery("searchManager", Manager.class);
-        return query.getSingleResult();
+    public List<Manager> searchManager(String firstName,String lastName) {
+        TypedQuery<Manager> query = em.createNamedQuery("searchManager", Manager.class).setParameter("firstName", firstName).setParameter("lastName", lastName);
+        return query.getResultList();
+
     }
   
 }
