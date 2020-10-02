@@ -25,7 +25,6 @@ import javax.persistence.Table;
     @NamedQuery(name = "findAllManagers", query = "SELECT m FROM Manager m"),
     @NamedQuery(name="searchManager", query = "select m from Manager m where m.firstName=:firstName AND m.lastName=:lastName"),
 })
-
 public class Manager extends BaseEntity {
     private String firstName;
     private String lastName;

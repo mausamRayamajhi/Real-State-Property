@@ -15,8 +15,8 @@
 
           <br/>
           <h3 style="color: green;"> Successfully created sale property
-              <h:outputText value="#{salePropertyController.managerById.address.streetNumber}"/>
-              <h:outputText value="#{salePropertyController.managerById.address.streetName}"/>
+              <h:outputText value="#{salePropertyController.address.streetNumber}"/>
+              <h:outputText value="#{salePropertyController.address.streetName}"/>
               !!</h3>
           <h:dataTable value="#{salePropertyController.salePropertyList}" var="sale" border="1">
          
@@ -38,7 +38,7 @@
             <f:facet name="header">
                 <h:outputText value="Location"/>
             </f:facet>
-            <h:outputText value="#{sale.address.toString}"/>
+            <h:outputText value="#{sale.address.streetNumber} #{sale.address.streetName} #{sale.address.city}"/>
         </h:column>
         
         <h:column>

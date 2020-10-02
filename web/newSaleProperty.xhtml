@@ -1,7 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
 <h:head>
     <title>Creates a new Sale Property</title>
     <style>
@@ -14,34 +14,34 @@
     <h:form>
         <h:panelGrid columns="2" >
             <h:outputLabel value="Property Type: "/>
-            <h:inputText value="#{salePropertyController.property.type}"/>
+            <h:inputText value="#{salePropertyController.saleProperty.type}"/>
 
             <h:outputLabel value="No. of Bedrooms: "/>
-            <h:inputText value="#{salePropertyController.property.bedroom}"/>
+            <h:inputText value="#{salePropertyController.saleProperty.bedroom}"/>
 
             <h:outputLabel value="No. of bathrooms: "/>
-            <h:inputText value="#{salePropertyController.property.bathroom}"/>
+            <h:inputText value="#{salePropertyController.saleProperty.bathroom}"/>
 
             <h:outputLabel value=" Property Description: "/>
-            <h:inputTextarea value="#{salePropertyController.property.description}" cols="20" rows="5"/>
+            <h:inputTextarea value="#{salePropertyController.saleProperty.description}" cols="20" rows="5"/>
 
             <h:outputLabel value="Street Number: "/>
-            <h:inputText value="#{salePropertyController.property.address.streetNumber}"/>
+            <h:inputText value="#{salePropertyController.address.streetNumber}"/>
 
             <h:outputLabel value="Street Name: "/>
-            <h:inputText value="#{salePropertyController.property.address.streetName}"/>
+            <h:inputText value="#{salePropertyController.address.streetName}"/>
             
             <h:outputLabel value="City: "/>
-            <h:inputText value="#{salePropertyController.property.address.city}"/>
+            <h:inputText value="#{salePropertyController.address.city}"/>
             
             <h:outputLabel value="Postcode: "/>
-            <h:inputText value="#{salePropertyController.property.address.postCode}"/>
+            <h:inputText value="#{salePropertyController.address.postCode}"/>
             
             <h:outputLabel value="Country: "/>
-            <h:inputText value="#{salePropertyController.property.address.country}"/>
+            <h:inputText value="#{salePropertyController.address.country}"/>
             
             <h:outputLabel value="Sale Price: "/>
-            <h:inputText value="#{salePropertyController.property.salePrice}"/>
+            <h:inputText value="#{salePropertyController.saleProperty.salePrice}"/>
 
 
 
@@ -51,8 +51,8 @@
 
     </h:form>
     <hr/>
-    <a href="listSaleProperty.faces">The List of Sale Properties</a> |
-    <a href="mainPage.faces"> Go to Main Page</a> <br/><br/>
+<!--    <a href="listSaleProperty.faces">The List of Sale Properties</a> |
+    <a href="mainPage.faces"> Go to Main Page</a> <br/><br/>-->
       
 
 </h:body>

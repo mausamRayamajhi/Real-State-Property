@@ -6,6 +6,7 @@
 package realstate.model;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.MappedSuperclass;
 
 /**
@@ -15,7 +16,9 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class Property extends BaseEntity{
 
-    private Address address;
+    @Embedded
+    Address address;
+      
     @Column(length = 2000)
     private String description;
     
@@ -28,22 +31,15 @@ public class Property extends BaseEntity{
     public Property() {
     }
 
-    public Property(Long id,Address address, String description, String type, int bedroom, int bathroom) {
+    public Property(Long id, String description, String type, int bedroom, int bathroom, Address address) {
         super(id);
-        this.address = address;
+        this.address =address;
         this.description = description;
         this.type = type;
         this.bedroom = bedroom;
         this.bathroom = bathroom;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 
     public String getDescription() {
         return description;
@@ -77,10 +73,15 @@ public class Property extends BaseEntity{
         this.bathroom = bathroom;
     }
 
-    @Override
-    public String toString() {
-        return "Property{" + "address=" + address + ", description=" + description + ", type=" + type + ", bedroom=" + bedroom + ", bathroom=" + bathroom + '}';
+    public Address getAddress() {
+        return address;
     }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+   
 
    
 

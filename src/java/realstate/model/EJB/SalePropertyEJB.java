@@ -23,9 +23,9 @@ public class SalePropertyEJB {
     @PersistenceContext(unitName = "W8P1PU")
     private EntityManager em;
 
-    public SaleProperty createSaleProperty(SaleProperty property) {
-        em.persist(property);
-        return property;
+    public SaleProperty createSaleProperty(SaleProperty saleProperty) {
+        em.persist(saleProperty);
+        return saleProperty;
     }
     
     public List<SaleProperty> findSalePropertse() {

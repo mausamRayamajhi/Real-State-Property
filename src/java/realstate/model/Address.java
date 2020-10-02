@@ -6,17 +6,18 @@
 package realstate.model;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.MappedSuperclass;
 
 /**
  *
  * @author Mausam Rayamajhi
  */
-@MappedSuperclass
+@Embeddable
 public class Address {
     
     @Column(nullable = false)
-    private int streetNumber;
+    private int streetNumberasdfsdf;
     
     @Column(nullable = false)
     private String streetName;
@@ -34,8 +35,8 @@ public class Address {
     }
 
     
-    public Address(int streetNumber, String streetName, String city, int postCode, String country) {
-        this.streetNumber = streetNumber;
+    public Address(int streetNumberasdfsdf, String streetName, String city, int postCode, String country) {
+        this.streetNumberasdfsdf = streetNumberasdfsdf;
         this.streetName = streetName;
         this.city = city;
         this.postCode = postCode;
@@ -43,11 +44,11 @@ public class Address {
     }
 
     public int getStreetNumber() {
-        return streetNumber;
+        return streetNumberasdfsdf;
     }
 
     public void setStreetNumber(int streetNumber) {
-        this.streetNumber = streetNumber;
+        this.streetNumberasdfsdf = streetNumber;
     }
 
     public String getStreetName() {
@@ -84,7 +85,7 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Address{" + "streetNumber=" + streetNumber + ", streetName=" + streetName + ", city=" + city + ", postCode=" + postCode + ", country=" + country + '}';
+        return "Address{" + "streetNumber=" + streetNumberasdfsdf + ", streetName=" + streetName + ", city=" + city + ", postCode=" + postCode + ", country=" + country + '}';
     }
     
     
