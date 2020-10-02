@@ -21,7 +21,6 @@ import javax.persistence.Table;
  * @author Mausam Rayamajhi
  */
 @Entity
-@Table(name = "Rent_Property")
 @NamedQueries({
     @NamedQuery(name = "findAllRentPropertise", query = "SELECT m FROM RentProperty m"),})
 public class RentProperty  extends Property{
@@ -39,8 +38,8 @@ public class RentProperty  extends Property{
     public RentProperty() {
     }
 
-    public RentProperty(Long id,double weeklyRent, boolean isFurnished,String description, String type, int bedroom, int bathroom, Address addres) {
-        super(id,  description,  type,  bedroom,  bathroom,  addres);
+    public RentProperty(Long id,double weeklyRent, boolean isFurnished,String description, String type, int bedroom, int bathroom, Address address) {
+        super(id,  description,  type,  bedroom,  bathroom,  address);
         this.weekly_Rent = weeklyRent;
         this.isFurnished = isFurnished;
     }

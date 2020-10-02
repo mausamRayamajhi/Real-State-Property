@@ -13,8 +13,8 @@
         <br/>
         <h:form>
             <h:outputLabel value="Property ID: "/>
-            <h:inputText value="#{userBean.name}"/><br/><br/>
-            <h:commandButton action="#{userBean.processAction}" value="Submit"/>
+            <h:inputText value="#{rentPropertyController.rentProperty.id}"/><br/><br/>
+            <h:commandButton action="#{rentPropertyController.searchRentProperty}" value="Search"/>
         </h:form>
         <hr/>
         <a href="listRentProperty.faces">The list of rent properties</a> |

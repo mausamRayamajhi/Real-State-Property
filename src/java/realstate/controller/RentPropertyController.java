@@ -15,7 +15,9 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import realstate.model.Address;
 import realstate.model.EJB.RentPropertyEJB;
+import realstate.model.EJB.RentPropertyEJB;
 
+import realstate.model.RentProperty;
 import realstate.model.RentProperty;
 
 
@@ -28,81 +30,65 @@ import realstate.model.RentProperty;
 @ViewScoped
 public class RentPropertyController {
     
+  
     @EJB
-    private RentPropertyEJB rentPropertyEJB;
-    private RentProperty rentProperty = new RentProperty();
+    private RentPropertyEJB salePropertyEJB;
+    private RentProperty saleProperty = new RentProperty();
     private Address address = new Address();
-    private List<RentProperty> propertyList = new ArrayList<>();
+    private List<RentProperty> salePropertyList = new ArrayList<RentProperty>();
 
-    public String createRentProperty() {
-              rentProperty.setAddress(address);
-        rentProperty = rentPropertyEJB.createRentProperty(rentProperty);
+    public String doCreateRentProperty() {
+        System.out.println("DATA = " + saleProperty.toString());
+        saleProperty.setAddress(address);
+        saleProperty = salePropertyEJB.createRentProperty(saleProperty);
 
-        propertyList = rentPropertyEJB.findRentPropertse();
+        salePropertyList = salePropertyEJB.findRentPropertse();
 
         return "listRentProperty.xhtml";
     }
-    
-    public RentProperty getManagerById() {
-        rentProperty = rentPropertyEJB.findById(rentProperty.getId());
-        return rentProperty;
-    }
-    
+
+//    public RentProperty getManagerById() {
+////        saleProperty = salePropertyEJB.findById(saleProperty.getId());
+//        return saleProperty;
+//    }
     public List<RentProperty> getRentPropertyList() {
-        return rentPropertyEJB.findRentPropertse();
+        return salePropertyEJB.findRentPropertse();
     }
-    
-  
 
     public RentProperty getRentProperty() {
-        return rentProperty;
+
+        return saleProperty;
     }
 
-    public void setRentProperty(RentProperty rentProperty) {
-        this.rentProperty = rentProperty;
+    public Address getAddress() {
+        return address;
     }
 
-    public List<RentProperty> getPropertyList() {
-        return propertyList;
+    public void setRentProperty(RentProperty saleProperty) {
+        this.saleProperty = saleProperty;
     }
 
-    public void setPropertyList(List<RentProperty> propertyList) {
-        this.propertyList = propertyList;
+    public void setRentPropertyList(List<RentProperty> salePropertyList) {
+        this.salePropertyList = salePropertyList;
     }
-   public Address getAddress() {
-           return address;
-       }
 
-    
-    
-   public String viewRentProperty() {
+    public void setProperty(RentProperty saleProperty) {
+        this.saleProperty = saleProperty;
+    }
+
+    public String viewRentProperty() {
         FacesContext fc = FacesContext.getCurrentInstance();
         Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
-        System.out.print("ID = "+params.get("id"));
-        address.getStreetNumber();
-        address.getStreetName();
-        address.getCity();
-        address.getPostCode();
-        address.getCountry();
-        rentProperty.getAddress();
-        rentProperty.toString();
-        rentProperty.setId(Long.parseLong(params.get("id")));
-        rentProperty = rentPropertyEJB.findById(rentProperty.getId());
+        saleProperty = salePropertyEJB.findById(Long.parseLong(params.get("id")));
         return "viewRentalProperty.xhtml";
-
     }
-   
-      public String searchRentProperty() {
-       
-//  FacesContext fc = FacesContext.getCurrentInstance();
-//        Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
-//       System.out.print("ID = "+params.get("id"));
-//       manager.setFirstName(params.get("firstName"));
-//          manager.setLastName(params.get("lastName"));
 
-        rentProperty = rentPropertyEJB.findById(rentProperty.getId());
-         System.out.print("search = "+rentProperty.toString());
-         
-         return "viewRentalProperty.xhtml";
+    public String searchRentProperty() {
+
+        saleProperty = salePropertyEJB.findById(saleProperty.getId());
+        System.out.print("search = " + saleProperty.toString());
+
+        return "viewRentalProperty.xhtml";
     }
+
 }
