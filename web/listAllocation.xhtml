@@ -18,24 +18,29 @@
           <h:dataTable value="#{allocationController.allocationList}" var="mgr" border="1">
          
         <h:column>
-            <f:facet name="header">
+            <f:facet name="header" >
                 <h:outputText value="ID"/>
             </f:facet>
             <h:outputText value="#{mgr.id}"/>
         </h:column>
+              
+              
 
-        <h:column>
-            <f:facet name="header">
-                <h:outputText value="Property Manager"/>
+        <h:column  >
+            <f:facet name="header"  >
+                <h:outputText value="Property Manager" />
             </f:facet>
             <h:outputText value="#{mgr.manager.firstName}"/>
         </h:column>
         
         <h:column>
             <f:facet name="header">
-                <h:outputText value="Property"/>
+                <h:outputText value="Property" />
             </f:facet>
-            <h:outputText value="#{mgr.rentProperty.address.streetName}"/>
+            <h:outputText value="#{mgr.rentProperty.address.streetNumber} #{mgr.rentProperty.address.streetName}"/>
+            <br/>
+            <br/>
+            <h:outputText value="#{mgr.saleProperty.address.streetNumber} #{mgr.saleProperty.address.streetName}"/>
         </h:column>
         
         <h:column>
@@ -43,18 +48,16 @@
                 <h:outputText value="Time Created"/>
             </f:facet>
             <h:outputText value="#{mgr.date}"/>
-            <h:commandLink value="Delete"
-                                action="#{order.deleteAction(o)}" />
+         
         </h:column>
         
-
 
       
 
     </h:dataTable>
           
           
-          // <h3> Total Property Managers:  <h:outputText value=""/></h3>
+           <h3> Total Property Managers:  <h:outputText value=""/></h3>
   
      
  

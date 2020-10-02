@@ -9,10 +9,12 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import realstate.model.Address;
 import realstate.model.Allocation;
 import realstate.model.EJB.AllocationEJB;
@@ -58,8 +60,12 @@ saleProperty.setAddress(address);
         return "listAllocation.xhtml";
     }
 
-    public List<Allocation> deleteAllocations() {
-        return allocationList;
+    public void deleteAllocations() {
+         FacesContext fc = FacesContext.getCurrentInstance();
+        Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
+       
+        allocation.setId(Long.parseLong(params.get("id")));
+         allocationEJB.delete(allocation);
 
     }
 
@@ -70,25 +76,23 @@ saleProperty.setAddress(address);
 //       System.out.print("ID = "+params.get("id"));
 //       manager.setFirstName(params.get("firstName"));
 //          manager.setLastName(params.get("lastName"));
+allocationList.clear();
         allocation = allocationEJB.findById(allocation.getId());
+        allocationList.add(allocation);
         System.out.print("search = " + allocation.toString());
 
-        System.out.print("search = " + allocationList.toString());
+   
 
-        return "searchListAllocation.xhtml";
+        return "allocationSearch.xhtml";
     }
 
     public List<Allocation> getAllocationList() {
         return allocationList = allocationEJB.findAllAllocation();
     }
 
-    public void setAllocationEJB(AllocationEJB allocationEJB) {
-        this.allocationEJB = allocationEJB;
-    }
+  
 
-    public void setAllocation(Allocation allocation) {
-        this.allocation = allocation;
-    }
+    
 
     public void setAllocationList(List<Allocation> allocationList) {
         this.allocationList = allocationList;

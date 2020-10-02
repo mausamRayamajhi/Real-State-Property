@@ -35,8 +35,8 @@ public class Address {
     }
 
     
-    public Address(int streetNumberasdfsdf, String streetName, String city, int postCode, String country) {
-        this.streetNumber = streetNumberasdfsdf;
+    public Address(int streetNumber, String streetName, String city, int postCode, String country) {
+        this.streetNumber = streetNumber;
         this.streetName = streetName;
         this.city = city;
         this.postCode = postCode;

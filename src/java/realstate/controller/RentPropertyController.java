@@ -32,7 +32,7 @@ public class RentPropertyController {
     
   
     @EJB
-    private RentPropertyEJB salePropertyEJB;
+    private RentPropertyEJB rentPropertyEJB;
     private RentProperty saleProperty = new RentProperty();
     private Address address = new Address();
     private List<RentProperty> salePropertyList = new ArrayList<RentProperty>();
@@ -40,9 +40,9 @@ public class RentPropertyController {
     public String doCreateRentProperty() {
         System.out.println("DATA = " + saleProperty.toString());
         saleProperty.setAddress(address);
-        saleProperty = salePropertyEJB.createRentProperty(saleProperty);
+        saleProperty = rentPropertyEJB.createRentProperty(saleProperty);
 
-        salePropertyList = salePropertyEJB.findRentPropertse();
+        salePropertyList = rentPropertyEJB.findRentPropertse();
 
         return "listRentProperty.xhtml";
     }
@@ -52,7 +52,7 @@ public class RentPropertyController {
 //        return saleProperty;
 //    }
     public List<RentProperty> getRentPropertyList() {
-        return salePropertyEJB.findRentPropertse();
+        return rentPropertyEJB.findRentPropertse();
     }
 
     public RentProperty getRentProperty() {
@@ -79,13 +79,13 @@ public class RentPropertyController {
     public String viewRentProperty() {
         FacesContext fc = FacesContext.getCurrentInstance();
         Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
-        saleProperty = salePropertyEJB.findById(Long.parseLong(params.get("id")));
+        saleProperty = rentPropertyEJB.findById(Long.parseLong(params.get("id")));
         return "viewRentalProperty.xhtml";
     }
 
     public String searchRentProperty() {
 
-        saleProperty = salePropertyEJB.findById(saleProperty.getId());
+        saleProperty = rentPropertyEJB.findById(saleProperty.getId());
         System.out.print("search = " + saleProperty.toString());
 
         return "viewRentalProperty.xhtml";

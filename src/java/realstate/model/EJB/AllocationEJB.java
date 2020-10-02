@@ -35,6 +35,7 @@ public class AllocationEJB {
 
     public Allocation findById(Long id) {
         Allocation allocation = em.find(Allocation.class, id);
+        
         if (allocation == null) {
             throw new EntityNotFoundException("Can't find allocation for ID "
                     + id);
@@ -46,6 +47,13 @@ public class AllocationEJB {
 
         TypedQuery<Allocation> query = em.createNamedQuery("findByManagerId", Allocation.class);
         return query.getSingleResult();
+
+    }
+    
+      public void delete(Allocation allocation) {
+
+       
+       em.remove(findById(allocation.getId()));
 
     }
 }

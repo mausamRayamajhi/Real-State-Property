@@ -7,9 +7,8 @@ package realstate.model;
 
 
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -32,7 +31,14 @@ public class Manager extends BaseEntity {
     private int mobile;
     private String email;
     
-   
+//    @OneToMany
+//  @JoinColumn(name="RENT_ID", referencedColumnName="ID")
+//  private List<RentProperty> rentPropertys;
+//    
+//     @OneToMany
+//  @JoinColumn(name="SALE_ID", referencedColumnName="ID")
+//  private List<SaleProperty> salePropertys;
+    
     public Manager() {
     }
 
@@ -90,6 +96,22 @@ public class Manager extends BaseEntity {
     public String toString() {
         return "ManagerID = "+ super.getId()+" Manager{" + "firstName=" + firstName + ", lastName=" + lastName + ", phone=" + phone + ", mobile=" + mobile + ", email=" + email + '}';
     }
+//
+//    public List<RentProperty> getRentPropertys() {
+//        return rentPropertys;
+//    }
+//
+//    public void setRentPropertys(List<RentProperty> rentPropertys) {
+//        this.rentPropertys = rentPropertys;
+//    }
+//
+//    public List<SaleProperty> getSalePropertys() {
+//        return salePropertys;
+//    }
+//
+//    public void setSalePropertys(List<SaleProperty> salePropertys) {
+//        this.salePropertys = salePropertys;
+//    }
 
    
     

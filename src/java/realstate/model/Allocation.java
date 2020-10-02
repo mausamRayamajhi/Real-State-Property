@@ -28,7 +28,6 @@ public class Allocation extends BaseEntity {
 
     @ManyToOne
     @JoinColumn( nullable = false)
-    
     private Manager manager;
 
     @ManyToOne
