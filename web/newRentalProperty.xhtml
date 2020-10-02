@@ -15,41 +15,41 @@
         <h:form>
         <h:panelGrid columns="2" >
             <h:outputLabel value="Property Type: "/>
-            <h:inputText value="#{rentPropertyController.property.type}"/>
+            <h:inputText value="#{rentPropertyController.rentProperty.type}"/>
 
             <h:outputLabel value="No. of Bedrooms: "/>
-            <h:inputText value="#{rentPropertyController.property.bedroom}"/>
+            <h:inputText value="#{rentPropertyController.rentProperty.bedroom}"/>
 
             <h:outputLabel value="No. of bathrooms: "/>
-            <h:inputText value="#{rentPropertyController.property.bathroom}"/>
+            <h:inputText value="#{rentPropertyController.rentProperty.bathroom}"/>
 
             <h:outputLabel value=" Property Description: "/>
-            <h:inputTextarea value="#{rentPropertyController.property.description}" cols="20" rows="5"/>
+            <h:inputTextarea value="#{rentPropertyController.rentProperty.description}" cols="20" rows="5"/>
 
             <h:outputLabel value="Street Number: "/>
-            <h:inputText value="#{rentPropertyController.property.address.streetNumber}"/>
+            <h:inputText value="#{rentPropertyController.address.streetNumber}"/>
 
             <h:outputLabel value="Street Name: "/>
-            <h:inputText value="#{rentPropertyController.property.address.streetName}"/>
+            <h:inputText value="#{rentPropertyController.address.streetName}"/>
             
             <h:outputLabel value="City: "/>
-            <h:inputText value="#{rentPropertyController.property.address.city}"/>
+            <h:inputText value="#{rentPropertyController.address.city}"/>
             
             <h:outputLabel value="Postcode: "/>
-            <h:inputText value="#{rentPropertyController.property.address.postCode}"/>
+            <h:inputText value="#{rentPropertyController.address.postCode}"/>
             
             <h:outputLabel value="Country: "/>
-            <h:inputText value="#{rentPropertyController.property.address.country}"/>
+            <h:inputText value="#{rentPropertyController.address.country}"/>
             
             <h:outputLabel value="Weekly Rent "/>
-            <h:inputText value="#{rentPropertyController.property.salePrice}"/>
+            <h:inputText value="#{rentPropertyController.rentProperty.weeklyRent}"/>
 
             <h:outputLabel value="Furnished : "/>
-            <h:selectBooleanCheckbox value="#{rentPropertyController.property.isFurnished}"/>
+            <h:selectBooleanCheckbox value="#{rentPropertyController.rentProperty.isFurnished}"/>
 
 
         </h:panelGrid>
-            <h:commandButton value="CREATE" action="#{rentPropertyController.createRentProperty()}"/>
+            <h:commandButton value="CREATE" action="#{rentPropertyController.createRentProperty}"/>
 
         </h:form>
         <hr/>

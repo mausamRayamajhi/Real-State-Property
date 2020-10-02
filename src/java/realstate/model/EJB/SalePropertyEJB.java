@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import realstate.model.Manager;
 import realstate.model.SaleProperty;
 
 /**
@@ -41,4 +42,6 @@ public class SalePropertyEJB {
         }
         return property;
     }
+     
+    
 }

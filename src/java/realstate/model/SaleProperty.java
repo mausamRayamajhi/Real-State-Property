@@ -22,7 +22,9 @@ import javax.persistence.Table;
  */
 @Entity
 @NamedQueries({
-    @NamedQuery(name = "findAllSalePropertise", query = "SELECT m FROM SaleProperty m"),})
+    @NamedQuery(name = "findAllSalePropertise", query = "SELECT m FROM SaleProperty m"),
+    
+})
 public class SaleProperty extends Property {
 
     @Column(nullable = false)
@@ -55,12 +57,14 @@ public class SaleProperty extends Property {
         return "SaleProperty{" + "salePrice=" + salePrice + '}';
     }
 
-//    public Address getAddress() {
-//        return address;
-//    }
-//
-//    public void setAddress(Address address) {
-//        this.address = address;
-//    }
+    @Override
+     public Address getAddress() {
+       return address;
+    }
+
+    @Override
+   public void setAddress(Address address) {
+       this.address = address;
+    }
 
 }

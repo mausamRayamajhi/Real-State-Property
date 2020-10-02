@@ -14,45 +14,52 @@
         <h1 style="color: white; font-size: 30px; background-color: navy; padding: 5px" >The Current Rental Properties </h1>
 
           <br/>
-          <h3 style="color: green;"> Successfully created rental property  <h:outputText value="#{managerController.manager.firstName}"/>!!</h3>
-    <h:dataTable value="#{managerController.managerList}" var="mgr" border="1">
+          <h3 style="color: green;"> Successfully created rent property
+              <h:outputText value="#{rentPropertyController.address.streetNumber}"/>
+              <h:outputText value="#{rentPropertyController.address.streetName}"/>
+              !!</h3>
+          <h:dataTable value="#{rentPropertyController.rentPropertyList}" var="rent" border="1">
          
         <h:column>
             <f:facet name="header">
                 <h:outputText value="ID"/>
             </f:facet>
-            <h:outputText value="#{mgr.firstName}"/>
+            <h:outputText value="#{rent.id}"/>
         </h:column>
 
         <h:column>
             <f:facet name="header">
                 <h:outputText value="Type"/>
             </f:facet>
-            <h:outputText value="#{mgr.lastName}"/>
+            <h:outputText value="#{rent.type}"/>
         </h:column>
         
         <h:column>
             <f:facet name="header">
                 <h:outputText value="Location"/>
             </f:facet>
-            <h:outputText value="#{mgr.lastName}"/>
+            <h:outputText value="#{rent.address.streetNumber} #{rent.address.streetName} #{rent.address.city}"/>
         </h:column>
         
         <h:column>
             <f:facet name="header">
-                   <h:outputText value="Actions"/>
-                 
-            </f:facet>
-           <h:link outcome="listRentProperty.xhtml" value="View Details"/>
-        </h:column>
+                <h:outputText value="Actions"/>
 
+            </f:facet>
+                
+            <h:form>
+                <h:commandButton value="view Details" action="#{rentPropertyController.viewRentProperty}">
+                    <f:param id="id" name="id" value="#{rent.id}"/>
+                </h:commandButton>
+            </h:form>
+        </h:column>
 
       
 
     </h:dataTable>
           
           
-       <h3> Total Rental Properties:  <h:outputText value=""/></h3>
+          <h3> Total Sale Properties  <h:outputText value="#{rentPropertyController.rentPropertyList.size()}"/></h3>
   
      
  

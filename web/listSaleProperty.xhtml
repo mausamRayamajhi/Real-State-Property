@@ -43,12 +43,16 @@
         
         <h:column>
             <f:facet name="header">
-                   <h:outputText value="Actions"/>
-                 
-            </f:facet>
-           <h:link outcome="listSaleProperty.xhtml" value="View Details"/>
-        </h:column>
+                <h:outputText value="Actions"/>
 
+            </f:facet>
+                
+            <h:form>
+                <h:commandButton value="view Details" action="#{salePropertyController.viewSaleProperty}">
+                    <f:param id="id" name="id" value="#{sale.id}"/>
+                </h:commandButton>
+            </h:form>
+        </h:column>
 
       
 

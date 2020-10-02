@@ -1,5 +1,4 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
@@ -10,11 +9,10 @@
         </style>
     </h:head>
     <h:body>
-        <h1 style="color: white; font-size: 30px; background-color: navy; padding: 5px" >The Current Property Manager</h1>
+        <h1 style="color: white; font-size: 30px; background-color: navy; padding: 5px" >The Found Property Manager</h1>
 
         <br/>
-        <h3 style="color: green;"> Successfully created manager  <h:outputText value="#{managerController.manager.firstName}"/><h:outputText value="&#160;" /> <h:outputText value="#{managerController.manager.lastName}"/>!!</h3>
-        <h:dataTable value="#{managerController.managerList}" var="mgr" border="1">
+        <h:dataTable value="#{managerController.managerFoundList}" var="mgr" border="1">
 
             <h:column>
                 <f:facet name="header">

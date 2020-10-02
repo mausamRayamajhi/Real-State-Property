@@ -17,7 +17,7 @@ import javax.persistence.MappedSuperclass;
 public class Address {
     
     @Column(nullable = false)
-    private int streetNumberasdfsdf;
+    private int streetNumber;
     
     @Column(nullable = false)
     private String streetName;
@@ -36,7 +36,7 @@ public class Address {
 
     
     public Address(int streetNumberasdfsdf, String streetName, String city, int postCode, String country) {
-        this.streetNumberasdfsdf = streetNumberasdfsdf;
+        this.streetNumber = streetNumberasdfsdf;
         this.streetName = streetName;
         this.city = city;
         this.postCode = postCode;
@@ -44,11 +44,11 @@ public class Address {
     }
 
     public int getStreetNumber() {
-        return streetNumberasdfsdf;
+        return streetNumber;
     }
 
     public void setStreetNumber(int streetNumber) {
-        this.streetNumberasdfsdf = streetNumber;
+        this.streetNumber = streetNumber;
     }
 
     public String getStreetName() {
@@ -83,9 +83,9 @@ public class Address {
         this.country = country;
     }
 
-    @Override
+    
     public String toString() {
-        return "Address{" + "streetNumber=" + streetNumberasdfsdf + ", streetName=" + streetName + ", city=" + city + ", postCode=" + postCode + ", country=" + country + '}';
+        return "Address{" + "streetNumber=" + streetNumber + ", streetName=" + streetName + ", city=" + city + ", postCode=" + postCode + ", country=" + country + '}';
     }
     
     

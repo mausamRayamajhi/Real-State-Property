@@ -7,9 +7,12 @@ package realstate.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import realstate.model.Address;
 import realstate.model.EJB.SalePropertyEJB;
 import realstate.model.Manager;
@@ -21,6 +24,7 @@ import realstate.model.SaleProperty;
  */
 @ManagedBean
 @RequestScoped
+@ViewScoped
 public class SalePropertyController {
 
     @EJB
@@ -49,12 +53,12 @@ public class SalePropertyController {
         return salePropertyEJB.findSalePropertse();
     }
     
- public SaleProperty getSaleProperty() {
-        return saleProperty;
-    }
- public Address getAddress() {
-        return address;
-    }
+    public SaleProperty getSaleProperty() {
+           return saleProperty;
+       }
+    public Address getAddress() {
+           return address;
+       }
 
     
 
@@ -73,7 +77,36 @@ public class SalePropertyController {
     }
    
  
+   public String viewSaleProperty() {
+        FacesContext fc = FacesContext.getCurrentInstance();
+        Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
+        System.out.print("ID = "+params.get("id"));
+        address.getStreetNumber();
+        address.getStreetName();
+        address.getCity();
+        address.getPostCode();
+        address.getCountry();
+        saleProperty.getAddress();
+        saleProperty.toString();
+        saleProperty.setId(Long.parseLong(params.get("id")));
+        saleProperty = salePropertyEJB.findById(saleProperty.getId());
+        return "viewSaleProperty.xhtml";
 
+    }
    
+      public String searchSaleProperty() {
+       
+//  FacesContext fc = FacesContext.getCurrentInstance();
+//        Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
+//       System.out.print("ID = "+params.get("id"));
+//       manager.setFirstName(params.get("firstName"));
+//          manager.setLastName(params.get("lastName"));
+
+        saleProperty = salePropertyEJB.findById(saleProperty.getId());
+         System.out.print("search = "+saleProperty.toString());
+         
+         return "viewSaleProperty.xhtml";
+    }
+
     
 }

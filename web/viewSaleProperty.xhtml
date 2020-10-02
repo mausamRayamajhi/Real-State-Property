@@ -3,10 +3,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Facelet Title</title>
+        <title> The Sale Property detail of ID </title>
     </h:head>
+    
     <h:body>
-        Hello from Facelets
+        <h1 style="color: white; font-size: 30px; background-color: navy; padding: 5px" > The Sale Property of ID :<h:outputText value="#{salePropertyController.saleProperty.id}"/></h1>
+    <br/>
+        <h:panelGrid columns="2" >
+            <h:outputLabel value="Property Type: "/>
+            <h:outputText value="#{salePropertyController.saleProperty.type}"/>
+
+            <h:outputLabel value="No. of Bedrooms: "/>
+            <h:outputText value="#{salePropertyController.saleProperty.bedroom}"/>
+
+            <h:outputLabel value="No. of bathrooms: "/>
+            <h:outputText value="#{salePropertyController.saleProperty.bathroom}"/>
+
+            <h:outputLabel value=" Property Description: "/>
+            <h:outputText value="#{salePropertyController.saleProperty.description}"/>
+
+            <h:outputLabel value="Address: "/>
+            <h:outputText value="#{salePropertyController.address.toString()}"/>
+            
+            <h:outputLabel value="Sale Price: "/>
+            <h:outputText value="#{salePropertyController.saleProperty.salePrice}"/>
+
+        </h:panelGrid>
+        
+    <hr/>
+        <a href="listSaleProperty.faces">The List of Sale Properties</a> |
+         <a href="mainPage.faces"> Go to Main Page</a> <br/><br/>-->
+      
+
     </h:body>
 </html>
 

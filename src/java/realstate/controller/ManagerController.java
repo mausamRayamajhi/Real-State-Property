@@ -30,7 +30,7 @@ public class ManagerController {
     private ManagerEJB managerEJB;
     private Manager manager = new Manager();
     private List<Manager> managerList = new ArrayList<Manager>();
-
+    private List<Manager> managerFoundList = new ArrayList<Manager>();
     /**
      * doCreateManager() method create new manager
      *
@@ -44,6 +44,10 @@ public class ManagerController {
         manager = managerEJB.createManager(manager);
 
         managerList = managerEJB.findManagers();
+        
+        
+        
+        
 
         return "listManager.xhtml";
     }
@@ -51,10 +55,22 @@ public class ManagerController {
     public String viewManager() {
         FacesContext fc = FacesContext.getCurrentInstance();
         Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
-       System.out.print("ID = "+params.get("id"));
+        System.out.print("ID = "+params.get("id"));
         manager.toString();
         manager.setId(Long.parseLong(params.get("id")));
         manager = managerEJB.findById(manager.getId());
+        return "viewManager.xhtml";
+
+    }
+     public String viewFoundManager() {
+        FacesContext fc = FacesContext.getCurrentInstance();
+        Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
+        System.out.print("ID = "+params.get("id"));
+        manager.toString();
+       // manager.setId(Long.parseLong(params.get("id")));
+        manager.setFirstName(params.get("firstName"));
+        manager.setLastName(params.get("lastName"));
+        manager = (Manager) managerEJB.searchManager(manager.getFirstName(),manager.getLastName());
         return "viewManager.xhtml";
 
     }
@@ -91,9 +107,10 @@ public class ManagerController {
 //       manager.setFirstName(params.get("firstName"));
 //          manager.setLastName(params.get("lastName"));
 
-         managerList = managerEJB.searchManager(manager.getFirstName(), manager.getLastName());
-         System.out.print("search = "+managerList.toString());
-         return "searchlistManager.xhtml";
+         managerFoundList = managerEJB.searchManager(manager.getFirstName(), manager.getLastName());
+         System.out.print("search = "+managerFoundList.toString());
+         
+         return "searchListManager.xhtml";
     }
 
     public void setManager(Manager manager) {
@@ -111,6 +128,10 @@ public class ManagerController {
 
     public void setManagerList(List<Manager> managerList) {
         this.managerList = managerList;
+    }
+
+     public List<Manager> getManagerFoundList() {
+        return managerFoundList;
     }
 
     

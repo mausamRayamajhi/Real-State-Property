@@ -27,7 +27,7 @@ import javax.persistence.Table;
 public class RentProperty  extends Property{
     
     @Column(nullable = false)
-     private double weeklyRent;
+     private double weekly_Rent;
      private boolean isFurnished;
      
      @OneToMany(cascade = CascadeType.ALL, mappedBy = "rentProperty")
@@ -41,16 +41,16 @@ public class RentProperty  extends Property{
 
     public RentProperty(Long id,double weeklyRent, boolean isFurnished,String description, String type, int bedroom, int bathroom, Address addres) {
         super(id,  description,  type,  bedroom,  bathroom,  addres);
-        this.weeklyRent = weeklyRent;
+        this.weekly_Rent = weeklyRent;
         this.isFurnished = isFurnished;
     }
 
     public double getWeeklyRent() {
-        return weeklyRent;
+        return weekly_Rent;
     }
 
     public void setWeeklyRent(double weeklyRent) {
-        this.weeklyRent = weeklyRent;
+        this.weekly_Rent = weeklyRent;
     }
 
     public boolean isIsFurnished() {
@@ -63,7 +63,7 @@ public class RentProperty  extends Property{
 
     @Override
     public String toString() {
-        return "RentProperty{" + "weeklyRent=" + weeklyRent + ", isFurnished=" + isFurnished + '}';
+        return "RentProperty{" + "weeklyRent=" + weekly_Rent + ", isFurnished=" + isFurnished + '}';
     }
     
     
